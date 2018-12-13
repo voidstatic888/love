@@ -7,7 +7,8 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    innerAudioContext: null
   },
   //事件处理函数
   bindViewTap: function() {
@@ -41,6 +42,17 @@ Page({
           })
         }
       })
+    }
+  },
+  onShow: function(){
+    if (app.globalData.innerAudioContext) {
+      console.log("播放")
+      app.globalData.innerAudioContext.play()
+    } else {
+      app.globalData.innerAudioContext = wx.createInnerAudioContext()
+      app.globalData.innerAudioContext.autoplay = true
+      app.globalData.innerAudioContext.src = 'songs/StayWithMe-mini.mp3'
+      app.globalData.innerAudioContext.loop = true
     }
   },
   getUserInfo: function(e) {
