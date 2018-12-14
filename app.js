@@ -38,6 +38,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    innerAudioContext: null
+    innerAudioContext: null,
+    loveName: "殷秀玲"
   }
 })

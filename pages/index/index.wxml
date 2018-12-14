@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view>
+<view class='container'>
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
@@ -7,7 +7,18 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text>{{motto}}</text>
+  <view class='index-text'>
+    <text>{{loveName}}，猜猜我最喜欢下面图片中的哪个你</text>
+  </view>
+  <view class="page-body">
+      <view class="page-section page-section-spacing swiper">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='{{circular}}' indicator-color='{{indicator_color}}' indicator-active-color='{{indicator_active_color}}' class='swiper-item' >
+          <block wx:for="{{background}}" wx:key="*this">
+            <swiper-item>
+              <image src='/girl/{{item}}' mode='aspectFit' class='swiper-item'></image>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
   </view>
 </view>

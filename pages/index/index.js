@@ -4,7 +4,16 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    background: ['g3.jpg', 'g2.jpg', 'g4.jpg', 'g5.jpg', 'g6.jpg', 'g7.jpg'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: false,
+    circular: true,
+    interval: 2000,
+    duration: 500,
+    indicator_color: "rgba(241, 158, 194, .3)",
+    indicator_active_color: "#ff00ff",
+    loveName: "",
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -17,6 +26,9 @@ Page({
     })
   },
   onLoad: function () {
+    this.setData({
+      loveName: app.globalData.loveName
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -47,10 +59,10 @@ Page({
   onShow: function(){
     if (app.globalData.innerAudioContext) {
       console.log("播放")
-      app.globalData.innerAudioContext.play()
+      //app.globalData.innerAudioContext.play()
     } else {
       app.globalData.innerAudioContext = wx.createInnerAudioContext()
-      app.globalData.innerAudioContext.autoplay = true
+      app.globalData.innerAudioContext.autoplay = false
       app.globalData.innerAudioContext.src = 'songs/StayWithMe-mini.mp3'
       app.globalData.innerAudioContext.loop = true
     }
