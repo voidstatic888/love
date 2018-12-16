@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    background: ['g3.jpg', 'g2.jpg', 'g4.jpg', 'g5.jpg', 'g6.jpg', 'g7.jpg'],
+    background: ['g3', 'g2', 'g4', 'g5', 'g6', 'g7', 'g8'],
     indicatorDots: true,
     vertical: false,
     autoplay: false,
@@ -59,10 +59,10 @@ Page({
   onShow: function(){
     if (app.globalData.innerAudioContext) {
       console.log("播放")
-      //app.globalData.innerAudioContext.play()
+      app.globalData.innerAudioContext.play()
     } else {
       app.globalData.innerAudioContext = wx.createInnerAudioContext()
-      app.globalData.innerAudioContext.autoplay = false
+      app.globalData.innerAudioContext.autoplay = true
       app.globalData.innerAudioContext.src = 'songs/StayWithMe-mini.mp3'
       app.globalData.innerAudioContext.loop = true
     }
@@ -73,6 +73,41 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  jump_g3: function(){
+    wx.navigateTo({
+      url: '/pages/g_pages/g3/g3',
+    })
+  },
+  jump_g2: function () {
+    wx.navigateTo({
+      url: '/pages/g_pages/g2/g2',
+    })
+  },
+  jump_g4: function () {
+    wx.navigateTo({
+      url: '/pages/g_pages/g4/g4',
+    })
+  },
+  jump_g5: function () {
+    wx.navigateTo({
+      url: '/pages/g_pages/g5/g5',
+    })
+  },
+  jump_g6: function () {
+    wx.navigateTo({
+      url: '/pages/g_pages/g6/g6',
+    })
+  },
+  jump_g7: function () {
+    wx.navigateTo({
+      url: '/pages/g_pages/g7/g7',
+    })
+  },
+  jump_g8: function () {
+    wx.navigateTo({
+      url: '/pages/g_pages/g8/g8',
     })
   }
 })

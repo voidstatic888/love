@@ -1,0 +1,5 @@
+/* pages/item_pages/g2/g2.wxss */
+.qq{
+  align-items: center;
+  align-content: center
+}
