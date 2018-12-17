@@ -3,5 +3,5 @@
 </image>
 </view>
 <view style='width: 100%; height: 100%; text-align: center; display: {{textShow}} '>
-<text style='display:block; margin-top: 200rpx; color: purple; font-size: 20px'>{{word}}</text>
+<text style='display:block; margin-top: 200rpx; color: purple; font-size: 20px' space='nbsp'>{{word}}</text>
 </view>

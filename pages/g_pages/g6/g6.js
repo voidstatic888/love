@@ -1,11 +1,40 @@
 // pages/item_pages/g6/g6.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    word: "",
+    imageShow: "block",
+    textShow: "none"
+  },
 
+  onImageTap: function () {
+    this.setData({
+      imageShow: "none",
+      textShow: "block"
+    })
+    this.showText()
+  },
+
+  showText: function () {
+    //文字逐个显示
+    var word = app.globalData.word_g6;
+    var that = this
+    var i = 0;
+    var time = setInterval(function () {
+      var text = word.substring(0, i);
+      i++;
+      that.setData({
+        word: text
+      });
+      if (text.length == word.length) {
+        //   console.log("定时器结束！");
+        clearInterval(time);
+      }
+    }, 200)
   },
 
   /**

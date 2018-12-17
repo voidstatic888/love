@@ -1,2 +1,7 @@
-<!--pages/item_pages/g3/g3.wxml-->
-<text>pages/item_pages/g3/g3.wxml</text>
+<view style='width: 100%; height: 100%; display: {{imageShow}}'>
+<image src='/girl/g3.jpg' mode='scaleToFill' style='width: 100%; height: 100%;' bindtap='onImageTap'>
+</image>
+</view>
+<view style='width: 100%; height: 100%; text-align: center; display: {{textShow}} '>
+<text style='display:block; margin-top: 200rpx; color: purple; font-size: 20px' space='nbsp'>{{word}}</text>
+</view>
